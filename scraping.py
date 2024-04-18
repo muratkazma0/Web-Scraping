@@ -14,6 +14,6 @@ soup = BeautifulSoup(html, "html.parser")
 liste = soup.find("tbody", {"class": "lister-list"}).find_all("tr", limit=10)
 
 for item in liste:
-    film_adi = item.find("td", {"class": "titleColumn"}).find("a").text
-    film_puan = item.find("td", {"class": "ratingColumn"}).find("strong").text
+    film_adi = item.find("h3", {"class": "titleColumn"}).find("a").text
+    film_puan = item.find("span", {"class": "ratingColumn"}).find("strong").text
     print(film_adi, film_puan)
